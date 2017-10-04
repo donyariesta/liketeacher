@@ -1,0 +1,1 @@
+function collectionHas(e,n){for(var r=0,t=e.length;t>r;r++)if(e[r]==n)return!0;return!1}function findParentBySelector(e,n){for(var r=document.querySelectorAll(n),t=e.parentNode;t&&!collectionHas(r,t);)t=t.parentNode;return t}function bindElementBySelector(e,n,r){for(var t=document.querySelectorAll(e),o=0;o<t.length;o++){var l=t[o];l.addEventListener(n,function(e){return r(e)})}}

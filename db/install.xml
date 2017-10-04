@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="blocks/community/db" VERSION="20120122" COMMENT="XMLDB file for Moodle blocks/community"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
+>
+  <TABLES>
+    <TABLE NAME="block_liketeacher" COMMENT="Like Teacher block">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="page" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false" COMMENT="can be profile or course"/>
+        <FIELD NAME="candidateid" TYPE="int" LENGTH="10" NOTNULL="false" SEQUENCE="false" COMMENT="can be user id with teacher role or course id"/>
+        <FIELD NAME="voterid" TYPE="int" LENGTH="10" NOTNULL="false" SEQUENCE="false" COMMENT="the value is user id"/>
+        <FIELD NAME="votetype" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false" COMMENT="like,thumb,rate"/>
+        <FIELD NAME="vote" TYPE="int" LENGTH="10" NOTNULL="false" SEQUENCE="false"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="block_liketeacher_topbyadmin" COMMENT="The most top teacher by admin">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="teacherid" TYPE="int" LENGTH="10" NOTNULL="false" SEQUENCE="false" COMMENT="the value is user id"/>
+        <FIELD NAME="order" TYPE="int" LENGTH="10" NOTNULL="false" SEQUENCE="false" COMMENT="can be user id with teacher role or course id"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+    </TABLE>
+  </TABLES>
+</XMLDB>
